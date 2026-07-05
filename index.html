@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poppu 3-Pose Asset — HDRV Studio</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: linear-gradient(135deg, #fce4ec, #e8f5e9, #e3f2fd);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+h1 {
+  font-size: 2rem;
+  color: #e91e63;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+.pose-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+}
+.pose-card {
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+.pose-card:hover {
+  transform: translateY(-4px);
+}
+.pose-card img {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  image-rendering: auto;
+}
+.pose-label {
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.pose-desc {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+.footer {
+  margin-top: 3rem;
+  color: #aaa;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.download-btn {
+  margin-top: 2rem;
+  padding: 12px 32px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.download-btn:hover {
+  background: #c2185b;
+}
+</style>
+</head>
+<body>
+<h1>🎨 Poppu — 3 Pose Asset Pack</h1>
+<p class="subtitle">GAME-8D53AD · HDRV Studio · 2D Illustrated PNG · Transparent Background Ready</p>
+
+<div class="pose-grid">
+  <div class="pose-card">
+    <img src="assets/poppu-idle.png" alt="Poppu Idle">
+    <span class="pose-label">😊 Idle</span>
+    <span class="pose-desc">Neutral standing pose</span>
+  </div>
+  <div class="pose-card">
+    <img src="assets/poppu-jump.png" alt="Poppu Jump">
+    <span class="pose-label">⭐ Jump</span>
+    <span class="pose-desc">Excited jumping pose</span>
+  </div>
+  <div class="pose-card">
+    <img src="assets/poppu-wave.png" alt="Poppu Wave">
+    <span class="pose-label">👋 Wave</span>
+    <span class="pose-desc">Friendly waving pose</span>
+  </div>
+</div>
+
+<a class="download-btn" href="assets/poppu-idle.png" download>📥 Download Idle PNG</a>
+
+<p class="footer">Poppu World © HDRV Studio · Assets: 1024×1024 PNG · For children ages 2-10</p>
+</body>
+</html>
