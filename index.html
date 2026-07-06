@@ -3,164 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poppu World — 3-Pose Character Asset</title>
+<title>Poppu 3-Pose — HDRV Studio</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: linear-gradient(135deg, #E8F5E9 0%, #FFF8E1 50%, #E3F2FD 100%);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    padding: 2rem;
-  }
-  .container { max-width: 1100px; width: 100%; }
-  h1 {
-    text-align: center;
-    font-size: 2.4rem;
-    color: #5D4037;
-    margin-bottom: 0.3rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-  }
-  .subtitle {
-    text-align: center;
-    color: #8D6E63;
-    font-size: 1rem;
-    margin-bottom: 2.5rem;
-    font-weight: 500;
-  }
-  .poses {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-  }
-  .pose-card {
-    background: white;
-    border-radius: 24px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .pose-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
-  }
-  .pose-img-wrapper {
-    width: 200px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle, #FCE4EC 0%, #F3E5F5 100%);
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    overflow: hidden;
-  }
-  .pose-img-wrapper img {
-    width: 160px;
-    height: 160px;
-    object-fit: contain;
-  }
-  .pose-label {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #4E342E;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .pose-desc {
-    font-size: 0.85rem;
-    color: #8D6E63;
-    margin-top: 0.3rem;
-  }
-  .badge {
-    display: inline-block;
-    background: #C8E6C9;
-    color: #2E7D32;
-    padding: 0.25rem 0.8rem;
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-top: 0.6rem;
-  }
-  .specs {
-    background: white;
-    border-radius: 16px;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-  .spec-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #5D4037;
-    font-size: 0.9rem;
-  }
-  .spec-icon { font-size: 1.2rem; }
-  .footer {
-    text-align: center;
-    color: #A1887F;
-    font-size: 0.8rem;
-    margin-top: 1rem;
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #E8F5E9 0%, #FFF8E1 50%, #E3F2FD 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+h1 {
+  font-size: 2.2rem;
+  color: #5D4037;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.subtitle {
+  color: #8D6E63;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.pose-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1100px;
+}
+.pose-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 1.5rem 1.5rem 1rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+.pose-card:hover { transform: translateY(-6px); }
+.pose-wrapper {
+  width: 260px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background:
+    repeating-conic-gradient(#f0f0f0 0% 25%, #fff 0% 50%) 50% / 20px 20px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.pose-wrapper img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  image-rendering: auto;
+}
+.pose-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #5D4037;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.pose-dim {
+  font-size: 0.8rem;
+  color: #9E9E9E;
+  margin-top: 0.2rem;
+}
+.footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: #BCAAA4;
+  font-size: 0.85rem;
+}
+.footer a { color: #8D6E63; text-decoration: none; }
+.meta {
+  margin-top: 1.5rem;
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 0.85rem;
+  color: #795548;
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.6;
+}
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>🐾 Poppu World Character</h1>
-  <p class="subtitle">Poppu Mascot — 3 Pose Assets (Illustrated PNG · Transparent Background)</p>
+<h1>🐾 Poppu 3-Pose Sheet</h1>
+<p class="subtitle">HDRV Studio · Preschool Brand · Illustrated 2D Character</p>
 
-  <div class="poses">
-    <div class="pose-card">
-      <div class="pose-img-wrapper">
-        <img src="assets/poppu-idle-rgba-v3.png" alt="Poppu Idle Pose">
-      </div>
-      <div class="pose-label">🧍 Idle</div>
-      <div class="pose-desc">Standing pose, gentle smile</div>
-      <span class="badge">RGBA · 200×200</span>
+<div class="pose-grid">
+  <div class="pose-card">
+    <div class="pose-wrapper">
+      <img src="assets/poppu-idle-rgba-v4.png" alt="Poppu Idle" loading="eager">
     </div>
-
-    <div class="pose-card">
-      <div class="pose-img-wrapper">
-        <img src="assets/poppu-jump-rgba-v3.png" alt="Poppu Jump Pose">
-      </div>
-      <div class="pose-label">⭐ Jump</div>
-      <div class="pose-desc">Dynamic mid-air, joyful expression</div>
-      <span class="badge">RGBA · 200×200</span>
-    </div>
-
-    <div class="pose-card">
-      <div class="pose-img-wrapper">
-        <img src="assets/poppu-wave-rgba-v2.png" alt="Poppu Wave Pose">
-      </div>
-      <div class="pose-label">👋 Wave</div>
-      <div class="pose-desc">Friendly wave, warm smile</div>
-      <span class="badge">RGBA · 200×200</span>
-    </div>
+    <div class="pose-label">Idle</div>
+    <div class="pose-dim">699 × 951 · RGBA</div>
   </div>
-
-  <div class="specs">
-    <div class="spec-item"><span class="spec-icon">🎨</span> Style: 2D Illustrated</div>
-    <div class="spec-item"><span class="spec-icon">📐</span> Format: PNG RGBA</div>
-    <div class="spec-item"><span class="spec-icon">🖼️</span> Resolution: 1024×1024</div>
-    <div class="spec-item"><span class="spec-icon">🦊</span> Character: Poppu Fox</div>
-    <div class="spec-item"><span class="spec-icon">✅</span> Background: Transparent</div>
-    <div class="spec-item"><span class="spec-icon">👶</span> Age: 2–10</div>
+  <div class="pose-card">
+    <div class="pose-wrapper">
+      <img src="assets/poppu-jump-rgba-v4.png" alt="Poppu Jump" loading="eager">
+    </div>
+    <div class="pose-label">Jump</div>
+    <div class="pose-dim">797 × 895 · RGBA</div>
   </div>
+  <div class="pose-card">
+    <div class="pose-wrapper">
+      <img src="assets/poppu-wave-rgba-v4.png" alt="Poppu Wave" loading="eager">
+    </div>
+    <div class="pose-label">Wave</div>
+    <div class="pose-dim">814 × 964 · RGBA</div>
+  </div>
+</div>
 
-  <p class="footer">HDRV Studio · Poppu World IP · Generated via FAL (FLUX 2) · © 2026</p>
+<div class="meta">
+  <strong>Poppu the Explorer</strong> — Cream fox (#F6EAD6), mint accents (#B7E0C9),<br>
+  brown pith helmet (#8B5E2B), green backpack (#6F8F4E), gold star compass (#FFD700).<br>
+  2D kawaii preschool illustration · thick outlines · cel-shaded · chibi proportions
+</div>
+
+<div class="footer">
+  HDRV Studio © 2026 · <a href="https://poppu.world" target="_blank">poppu.world</a>
 </div>
 </body>
 </html>
